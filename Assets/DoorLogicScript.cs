@@ -25,7 +25,8 @@ public class DoorLogicScript : MonoBehaviour
     {
         doorOpenSFX.Play();
         doorAnimator.Play("DoorOpen", 0, 0.0f);
-        //MonsterAnimator.Play("MonsterPeek",0, 0.0f);
+        GameManagerScript.instance.monsterRate += 1;
+        
         
     }
 
@@ -34,6 +35,7 @@ public class DoorLogicScript : MonoBehaviour
     {
         doorCloseSFX.Play();
         doorAnimator.Play("DoorClose", 0, 0.0f);
-        //MonsterAnimator.Play("MonsterBack", 0, 0.0f);
+        GameManagerScript.instance.monsterRate -= 1;
+
     }
 }
