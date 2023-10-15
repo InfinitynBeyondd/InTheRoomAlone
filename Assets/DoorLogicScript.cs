@@ -5,6 +5,7 @@ using UnityEngine;
 public class DoorLogicScript : MonoBehaviour
 {
     public Animator doorAnimator;
+    public Animator MonsterAnimator;
     public AudioSource doorOpenSFX;
     public AudioSource doorCloseSFX;
 
@@ -24,12 +25,15 @@ public class DoorLogicScript : MonoBehaviour
     {
         doorOpenSFX.Play();
         doorAnimator.Play("DoorOpen", 0, 0.0f);
+        //MonsterAnimator.Play("MonsterPeek",0, 0.0f);
+        
     }
 
     [ContextMenu("CloseDoorFunction")]
     public void CloseDoorFunction()
     {
         doorCloseSFX.Play();
-        doorAnimator.Play("DoorClose", 0, 0.0f);       
+        doorAnimator.Play("DoorClose", 0, 0.0f);
+        //MonsterAnimator.Play("MonsterBack", 0, 0.0f);
     }
 }
