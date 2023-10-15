@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.UI;
 using TMPro;
 using UnityEngine.UI;
 using System.Globalization;
+using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -45,15 +45,32 @@ public class GameManagerScript : MonoBehaviour
         int seconds = Mathf.FloorToInt(remainingtime % 60);
         TimerCountdownText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
+        if (remainingtime == 45)
+        {
+            //POOP
+        }
+        
+        
+        
+        if (remainingtime <= 0) //Once the countdown timer reaches 0 then you win
+        {
+            SceneManager.LoadScene("WINSCREEN");
+        }
 
 
-        if (monsterRate >= 1 && monsterRate >= 0) //This if statement is called if
+        if (monsterMeter >= monsterMeterLimit)
+        {
+            SceneManager.LoadScene("GAMEOVERSCREEN"); //Once the monster Rate has been complete filled up then the game is over
+        }
+
+            if (monsterRate >= 1 && monsterRate >= 0) //This if statement is called if
         {
             monsterMeter += Time.deltaTime * (float)(monsterRate * .75);
             int Monsterminutes = Mathf.FloorToInt(monsterMeter / 60);
             int Monsterseconds = Mathf.FloorToInt(monsterMeter % 60);
             MonsterLimitText.text = Monsterseconds.ToString() + "/" + monsterMeterLimit.ToString();
         }
+        
 
 
 
