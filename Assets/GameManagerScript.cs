@@ -22,6 +22,7 @@ public class GameManagerScript : MonoBehaviour
     [Header("Important Numbers")]
     [SerializeField] float remainingtime;
     public int monsterRate = 0; //MonsterRate Determines how fast the monster bar fills up, it depends on how many doors are open and how many have been closed
+    private float monsterMeter = 0;
 
 
 
@@ -38,6 +39,14 @@ public class GameManagerScript : MonoBehaviour
         int minutes = Mathf.FloorToInt(remainingtime / 60);
         int seconds = Mathf.FloorToInt(remainingtime % 60);
         TimerCountdownText.text = string.Format("{0:00}:{1:00}",minutes,seconds);
+
+        //If (monsterRate > 0){
+        // monsterRate = Time.deltaTime * monsterRate;
+        //}
+
+        //If (monsterRate > 20){
+        // GameOver();
+        //}
     }
 
 
