@@ -718,6 +718,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1274325295439631648, guid: 00ab97fb75df3e148b332a157d214442,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1375274361478780551, guid: 00ab97fb75df3e148b332a157d214442,
         type: 3}
       propertyPath: m_Name
@@ -831,7 +836,7 @@ PrefabInstance:
     - target: {fileID: 4537261442408915522, guid: 00ab97fb75df3e148b332a157d214442,
         type: 3}
       propertyPath: m_text
-      value: Gateway
+      value: You Survived!
       objectReference: {fileID: 0}
     - target: {fileID: 4537261442408915522, guid: 00ab97fb75df3e148b332a157d214442,
         type: 3}
@@ -841,17 +846,17 @@ PrefabInstance:
     - target: {fileID: 4537261442408915522, guid: 00ab97fb75df3e148b332a157d214442,
         type: 3}
       propertyPath: m_fontColor.b
-      value: 0.111249544
+      value: 0.13794944
       objectReference: {fileID: 0}
     - target: {fileID: 4537261442408915522, guid: 00ab97fb75df3e148b332a157d214442,
         type: 3}
       propertyPath: m_fontColor.g
-      value: 0.111249544
+      value: 0.9433962
       objectReference: {fileID: 0}
     - target: {fileID: 4537261442408915522, guid: 00ab97fb75df3e148b332a157d214442,
         type: 3}
       propertyPath: m_fontColor.r
-      value: 0.18867922
+      value: 0.181108
       objectReference: {fileID: 0}
     - target: {fileID: 4537261442408915522, guid: 00ab97fb75df3e148b332a157d214442,
         type: 3}
@@ -861,7 +866,7 @@ PrefabInstance:
     - target: {fileID: 4537261442408915522, guid: 00ab97fb75df3e148b332a157d214442,
         type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4280032304
+      value: 4280545582
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1710,7 +1715,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -282}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 917.9, y: 215}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &533384767
@@ -1725,6 +1730,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e419a4d4b65dfb94bae6eddedee04926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickAudioName: uiclick
+  hoverEnterAudioName: uihoverenter
+  hoverExitAudioName: 
 --- !u!114 &533384768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4342,31 +4350,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5612473439737539030, guid: 6c857beaa8c6e8c4c81eb3a1f4c07a37,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5612473439737539030, guid: 6c857beaa8c6e8c4c81eb3a1f4c07a37,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5612473439737539030, guid: 6c857beaa8c6e8c4c81eb3a1f4c07a37,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 102900000, guid: 0ff90a1a3aae8f043bc2c9f0e95189e6,
-        type: 3}
-    - target: {fileID: 5612473439737539030, guid: 6c857beaa8c6e8c4c81eb3a1f4c07a37,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5873034849852304069, guid: 6c857beaa8c6e8c4c81eb3a1f4c07a37,
         type: 3}
       propertyPath: m_Name
       value: Game Menu UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8163000599545015281, guid: 6c857beaa8c6e8c4c81eb3a1f4c07a37,
+        type: 3}
+      propertyPath: m_text
+      value: Play Again
       objectReference: {fileID: 0}
     - target: {fileID: 8557473583037173952, guid: 6c857beaa8c6e8c4c81eb3a1f4c07a37,
         type: 3}
@@ -4381,6 +4373,7 @@ PrefabInstance:
     - {fileID: 1618201968087201100, guid: 6c857beaa8c6e8c4c81eb3a1f4c07a37, type: 3}
     - {fileID: 4963728962271731208, guid: 6c857beaa8c6e8c4c81eb3a1f4c07a37, type: 3}
     - {fileID: 3392481681968431269, guid: 6c857beaa8c6e8c4c81eb3a1f4c07a37, type: 3}
+    - {fileID: 4021372199211343912, guid: 6c857beaa8c6e8c4c81eb3a1f4c07a37, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3634582738898810684, guid: 6c857beaa8c6e8c4c81eb3a1f4c07a37,
         type: 3}
