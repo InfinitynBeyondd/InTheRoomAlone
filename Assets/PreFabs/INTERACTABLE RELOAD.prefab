@@ -29,9 +29,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3277034488572007745}
-  - {fileID: 6755389526475675470}
+  - {fileID: 3618548599464145183}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2707807719906847327
 PrefabInstance:
@@ -96,6 +96,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1311080443262559925, guid: 6736da3913565cc4fa2db03dbd9bb737,
+        type: 3}
+      propertyPath: doorButton
+      value: 
+      objectReference: {fileID: 8385600224034911225}
     - target: {fileID: 1984548597634186774, guid: 6736da3913565cc4fa2db03dbd9bb737,
         type: 3}
       propertyPath: m_Name
@@ -277,9 +282,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51db19b6860dd3a439351b70dcdfc715, type: 3}
---- !u!4 &6755389526475675470 stripped
+--- !u!4 &3618548599464145183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8659267861537209617, guid: 51db19b6860dd3a439351b70dcdfc715,
+    type: 3}
+  m_PrefabInstance: {fileID: 5340227895928130574}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8385600224034911225 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4486691353973293047, guid: 51db19b6860dd3a439351b70dcdfc715,
     type: 3}
   m_PrefabInstance: {fileID: 5340227895928130574}
   m_PrefabAsset: {fileID: 0}

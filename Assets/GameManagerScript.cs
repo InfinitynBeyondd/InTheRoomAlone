@@ -38,21 +38,105 @@ public class GameManagerScript : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         remainingtime -= Time.deltaTime;
         int minutes = Mathf.FloorToInt(remainingtime / 60);
         int seconds = Mathf.FloorToInt(remainingtime % 60);
         TimerCountdownText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-        if (remainingtime == 45)
+        if (TimerCountdownText.text == "01:50")
         {
-            //POOP
+            if (doorLogic1.doorIsOpenedAlready != true)
+            {
+                doorLogic1.OpenDoorFunction();
+
+            }
         }
-        
-        
-        
-        if (remainingtime <= 0) //Once the countdown timer reaches 0 then you win
+        if (TimerCountdownText.text == "01:40")
+        {
+            if (doorLogic2.doorIsOpenedAlready != true)
+            {
+                doorLogic2.OpenDoorFunction();
+
+            }
+        }
+        if (TimerCountdownText.text == "01:30")
+        {
+            if (doorLogic3.doorIsOpenedAlready != true)
+            {
+                doorLogic3.OpenDoorFunction();
+
+            }
+        }
+        if (TimerCountdownText.text == "01:20")
+        {
+            if (doorLogic1.doorIsOpenedAlready != true)
+            {
+                doorLogic1.OpenDoorFunction();
+
+            }
+        }
+        if (TimerCountdownText.text == "01:10")
+        {
+            if (doorLogic2.doorIsOpenedAlready != true)
+            {
+                doorLogic2.OpenDoorFunction();
+
+            }
+        }
+        if (TimerCountdownText.text == "01:00")
+        {
+            if (doorLogic3.doorIsOpenedAlready != true)
+            {
+                doorLogic3.OpenDoorFunction();
+
+            }
+        }
+        if (TimerCountdownText.text == "00:50")
+        {
+            if (doorLogic1.doorIsOpenedAlready != true)
+            {
+                doorLogic1.OpenDoorFunction();
+
+            }
+        }
+        if (TimerCountdownText.text == "00:40")
+        {
+            if (doorLogic2.doorIsOpenedAlready != true)
+            {
+                doorLogic2.OpenDoorFunction();
+
+            }
+        }
+        if (TimerCountdownText.text == "00:30")
+        {
+            if (doorLogic3.doorIsOpenedAlready != true)
+            {
+                doorLogic3.OpenDoorFunction();
+
+            }
+        }
+        if (TimerCountdownText.text == "00:20")
+        {
+            if (doorLogic1.doorIsOpenedAlready != true)
+            {
+                doorLogic1.OpenDoorFunction();
+
+            }
+        }
+        if (TimerCountdownText.text == "00:10")
+        {
+            if (doorLogic2.doorIsOpenedAlready != true)
+            {
+                doorLogic2.OpenDoorFunction();
+
+            }
+        }
+
+
+
+        if (remainingtime <= 1) //Once the countdown timer reaches 0 then you win
         {
             SceneManager.LoadScene("WINSCREEN");
         }
