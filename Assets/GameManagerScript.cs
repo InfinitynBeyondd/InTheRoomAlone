@@ -38,7 +38,7 @@ public class GameManagerScript : MonoBehaviour
         remainingtime -= Time.deltaTime;
         int minutes = Mathf.FloorToInt(remainingtime / 60);
         int seconds = Mathf.FloorToInt(remainingtime % 60);
-        TimerCountdownText.text = string.Format("{0:00}:{1:00}",minutes,seconds);
+        TimerCountdownText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
         //If (monsterRate > 0){
         // monsterRate = Time.deltaTime * monsterRate;
@@ -49,11 +49,8 @@ public class GameManagerScript : MonoBehaviour
         //}
     }
 
+    private void PickRandomDoorToOpen(){
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
+
 }
