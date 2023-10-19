@@ -25,7 +25,7 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] float remainingtime;
     public int monsterRate = 0; //MonsterRate Determines how fast the monster bar fills up, it depends on how many doors are open and how many have been closed
     private float monsterMeter = 0;
-    private int monsterMeterLimit = 20; 
+    private int monsterMeterLimit = 20;
 
 
 
@@ -47,91 +47,47 @@ public class GameManagerScript : MonoBehaviour
 
         if (TimerCountdownText.text == "01:50")
         {
-            if (doorLogic1.doorIsOpenedAlready != true)
-            {
-                doorLogic1.OpenDoorFunction();
-
-            }
+            PickRandomDoorToOpen();
         }
         if (TimerCountdownText.text == "01:40")
         {
-            if (doorLogic2.doorIsOpenedAlready != true)
-            {
-                doorLogic2.OpenDoorFunction();
-
-            }
+            PickRandomDoorToOpen();
         }
         if (TimerCountdownText.text == "01:30")
         {
-            if (doorLogic3.doorIsOpenedAlready != true)
-            {
-                doorLogic3.OpenDoorFunction();
-
-            }
+            PickRandomDoorToOpen();
         }
         if (TimerCountdownText.text == "01:20")
         {
-            if (doorLogic1.doorIsOpenedAlready != true)
-            {
-                doorLogic1.OpenDoorFunction();
-
-            }
+            PickRandomDoorToOpen();
         }
         if (TimerCountdownText.text == "01:10")
         {
-            if (doorLogic2.doorIsOpenedAlready != true)
-            {
-                doorLogic2.OpenDoorFunction();
-
-            }
+            PickRandomDoorToOpen();
         }
         if (TimerCountdownText.text == "01:00")
         {
-            if (doorLogic3.doorIsOpenedAlready != true)
-            {
-                doorLogic3.OpenDoorFunction();
-
-            }
+            PickRandomDoorToOpen();
         }
         if (TimerCountdownText.text == "00:50")
         {
-            if (doorLogic1.doorIsOpenedAlready != true)
-            {
-                doorLogic1.OpenDoorFunction();
-
-            }
+            PickRandomDoorToOpen();
         }
         if (TimerCountdownText.text == "00:40")
         {
-            if (doorLogic2.doorIsOpenedAlready != true)
-            {
-                doorLogic2.OpenDoorFunction();
-
-            }
+            PickRandomDoorToOpen();
         }
         if (TimerCountdownText.text == "00:30")
         {
-            if (doorLogic3.doorIsOpenedAlready != true)
-            {
-                doorLogic3.OpenDoorFunction();
-
-            }
+            PickRandomDoorToOpen();
         }
         if (TimerCountdownText.text == "00:20")
         {
-            if (doorLogic1.doorIsOpenedAlready != true)
-            {
-                doorLogic1.OpenDoorFunction();
-
-            }
+            PickRandomDoorToOpen();
         }
         if (TimerCountdownText.text == "00:10")
         {
-            if (doorLogic2.doorIsOpenedAlready != true)
-            {
-                doorLogic2.OpenDoorFunction();
-
-            }
+            PickRandomDoorToOpen();
         }
 
 
@@ -147,22 +103,61 @@ public class GameManagerScript : MonoBehaviour
             SceneManager.LoadScene("GAMEOVERSCREEN"); //Once the monster Rate has been complete filled up then the game is over
         }
 
-            if (monsterRate >= 1 && monsterRate >= 0) //This if statement is called if
+        if (monsterRate >= 1 && monsterRate >= 0) //This if statement is called if
         {
             monsterMeter += Time.deltaTime * (float)(monsterRate * .75);
             int Monsterminutes = Mathf.FloorToInt(monsterMeter / 60);
             int Monsterseconds = Mathf.FloorToInt(monsterMeter % 60);
             MonsterLimitText.text = Monsterseconds.ToString() + "/" + monsterMeterLimit.ToString();
         }
-        
 
 
 
 
-    }
-
-    private void PickRandomDoorToOpen(){
 
     }
 
+
+    private void OpenDoor1AndCheckIfOpened()
+    {
+        if (doorLogic1.doorIsOpenedAlready != true)
+        {
+            doorLogic1.OpenDoorFunction();
+
+        }
+    }
+    private void OpenDoor2AndCheckIfOpened()
+    {
+        if (doorLogic2.doorIsOpenedAlready != true)
+        {
+            doorLogic2.OpenDoorFunction();
+
+        }
+    }
+    private void OpenDoor3AndCheckIfOpened()
+    {
+        if (doorLogic3.doorIsOpenedAlready != true)
+        {
+            doorLogic3.OpenDoorFunction();
+
+        }
+    }
+
+    private void PickRandomDoorToOpen()
+    {
+        int randomNumber = Random.Range(1, 3);
+
+        if (randomNumber == 1)
+        {
+            OpenDoor1AndCheckIfOpened();
+        }
+        if (randomNumber == 2)
+        {
+            OpenDoor2AndCheckIfOpened();
+        }
+        if (randomNumber == 3)
+        {
+            OpenDoor3AndCheckIfOpened();
+        }
+    }
 }
